@@ -1,0 +1,25 @@
+<div class="col-sm-3">
+    <div class="card bg-dark">
+        <div class="card-header">
+            <span>@{{ session['username'] }}</span>
+        </div>
+        <div class="card-body">
+            <img src="{{ session['fileName'] }}" alt="profile picture" class="profile_img">
+        </div>
+        <div class="card-footer">
+            <span>{{ session['firstName'] }}</span>
+            <span>{{ session['lastName'] }}</span>
+            <p>{{ session['email'] }}</p>
+        </div>
+    </div>
+</div>
+
+{% if False %}
+
+    <div class="card bg-dark">
+        <div class="card-header">
+            <img src="{{ session['fileName'] }}" alt="profile picture" class="post_img">
+            <span>@{{ session['username'] }}</span>
+        </div>
+    </div>
+{% endif %}

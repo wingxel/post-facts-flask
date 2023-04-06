@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand mt-z0-wg" href="#">Wingxel</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="flase" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    {% if request.path not in ['/', 'home', 'index'] %}
+                    <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                    {% endif %}
+                </li>
+                {% if request.path.split('/')[-1] != 'post-pg' %}
+                <li class="nav-item">
+                    <a href="{{ url_for('postFactPg') }}" class="nav-link">Post Fact</a>
+                </li>
+                {% endif %}
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                {% if not loggedIn %}
+                {% if request.path.split('/')[-1] != 'login-pg'%}
+                <li class="nav-item">
+                    <a href="{{ url_for('loginPg') }}" class="nav-link">Login</a>
+                </li>
+                {% endif %}
+                {% if request.path.split('/')[-1] != 'sign-pg'%}
+                <li class="nav-item">
+                    <a href="{{ url_for('signPg') }}" class="nav-link">Sign-Up</a>
+                </li>
+                {% endif %}
+                {% else %}
+                <li class="nav-item">
+                    <a href="{{ url_for('logout') }}" class="nav-link lg-ut-m">Logout</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a href="https://wingxel.github.io/website/index.html" class="nav-link" target="_blank">GitHub</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://play.google.com/store/apps/details?id=com.wingxel.python" class="nav-link"
+                        target="_blank">Play Store</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link mt-z0-wg">&copy; <span id="CopyRT"></span> Free</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

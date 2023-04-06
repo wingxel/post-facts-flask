@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% include 'nav.html' %}
+
+<div class="container">
+    <div class="row">
+        {% if loggedIn %}
+            {% include 'profile.html' %}
+        {% endif %}
+        <div class="col-sm-6 mx-auto">
+            <div class="main_content">
+                {% for item in facts %}
+                    <div class="card fact-item">
+                        <div class="card-header">
+                            <img src="{{ item[5] }}" alt="profile picture" class="post_img">
+                            <span>Posted by @{{ item[2] }} on {{ item[4] }}</span>
+                        </div>
+                        <div class="card-body">
+                            <p>{{ item[1] }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <form class="like-form">
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                <input type="hidden" name="fact_id" value="{{ item[0] }}">
+                                {% if item[6] %}
+                                    <input type="submit" name="actionBtn" value="Undo" class="like-btn">
+                                {% else %}
+                                    <input type="submit" name="actionBtn" value="Like" class="like-btn">
+                                {% endif %}
+                                <span id="{{ item[0] }}">{{ item[3] }}</span>
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock%}

@@ -1,0 +1,6 @@
+beautifulsoup4==4.11.1
+Flask==1.1.2
+Flask_WTF==0.15.1
+Pillow==9.3.0
+requests==2.22.0
+Werkzeug==1.0.1

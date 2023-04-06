@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% include 'nav.html' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 mx-auto">
+            <form id="PostFact">
+                <textarea name="fact" id="Fact" rows="10"></textarea><br>
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" id="CSRF">
+                <button type="submit" class="btn-ac">Post</button> <span id="Info"></span>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

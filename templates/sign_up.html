@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% include 'nav.html' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 mx-auto">
+            <form id="SignUp">
+                <fieldset>
+                    <legend id="Info">Sign-Up</legend>
+                    <input type="text" oninput="validateName($(this), 'First name')" name="firstName" id="FirstName"
+                        placeholder="Enter your first name" required><br>
+                    <input type="text" oninput="validateName($(this), 'Last name')" name="lastName" id="LastName"
+                        placeholder="Enter your last name" required><br>
+                    <input type="text" oninput="validateName($(this), 'Username')" id="Username" name="username"
+                        placeholder="Enter your username" required><br>
+                    <input type="email" oninput="validateEmail($(this))" name="email" id="Email"
+                        placeholder="Enter your email" required><br>
+                    <label>Select profile picture</label>
+                    <input type="file" accept="image/*" name="profile" id="Profile" required>
+                    <input type="password" oninput="validatePassword($(this))" name="password" id="Password"
+                        placeholder="Enter your password" required><br>
+                    <input type="password" oninput="confirmPasswd($(this))" name="confirmPassword" id="ConfirmPassword"
+                        placeholder="Confirm the entered password" required><br>
+                    <input type="hidden" name="csrf_token" id="CSRF" value="{{ csrf_token() }}">
+                    <button type="submit" class="btn-ac">Sign-Up</button><a href="{{ url_for('loginPg') }}" class="LoginPG">Login</a>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

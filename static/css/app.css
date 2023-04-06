@@ -1,0 +1,101 @@
+/**
+ *  https://wingxel.github.io/website
+ *   -----------------------------------
+**/
+
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+textarea {
+    background-color: black;
+    color: white;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.post_img {
+    width: 30px;
+    border-radius: 20%;
+}
+
+#SignUp input,
+#Login input {
+    margin: 4px;
+    height: 30px;
+    width: 90%;
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
+
+.fact-item .card-header {
+    color: cadetblue;
+}
+
+.fact-item .card-body {
+    color: cornflowerblue;
+}
+
+.profile_img {
+    width: 30%;
+    border-radius: 10px;
+}
+
+.nav-link {
+    color: antiquewhite !important;
+}
+
+.main_content {
+    color: white;
+    margin-top: 1rem;
+}
+
+.fact-item {
+    background-color: black;
+}
+
+.card {
+    margin-top: 1rem;
+    color: rgb(29, 238, 238);
+}
+
+fieldset,
+legend,
+form input {
+    all: revert;
+}
+
+fieldset,
+legend {
+    color: rgb(255, 255, 255);
+}
+
+.btn-ac {
+    width: 80px;
+    height: 30px;
+    background-color: black;
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+}
+
+.like-btn {
+    margin: 0px 10px 0px 5px;
+    background-color: black;
+    border: 0px;
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    color: white;
+}
+
+.like-btn:hover {
+    background-color: green;
+}
+
+button:hover {
+    background-color: rgb(10, 59, 10);
+}
+
+form a {
+    margin: 10px;
+}

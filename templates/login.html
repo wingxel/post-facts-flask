@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% include 'nav.html' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mx-auto">
+            <form id="Login">
+                <fieldset>
+                    <legend id="Info">Login</legend>
+                    <input type="text" oninput="validateName($(this), 'Username')" name="username" id="Username"
+                        placeholder="Enter your username" required><br>
+                    <input type="password" oninput="validateName($(this), 'Password')" name="password" id="Password"
+                        placeholder="Enter your password" required><br>
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" id="CSRF">
+                    <button type="submit" value="submit" class="btn-ac">Login</button>
+                    {% if not fromSignUp %}
+                    <a href="{{ url_for('signPg') }}" class="SignUpPG">Sign-Up</a>
+                    {% endif %}
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock%}
