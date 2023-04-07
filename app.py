@@ -5,7 +5,7 @@ https://wingxel.github.io/website
 -----------------------------------
 Flask sign-up, login and logout demo.
 Clone from github:
-    https://github.com/
+    https://github.com/wingxel/post-facts-flask.git
 --------------------------------------------
 Rate/Share: https://play.google.com/store/apps/details?id=com.wingxel.python
 """

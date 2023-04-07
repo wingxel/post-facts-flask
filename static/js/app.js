@@ -127,7 +127,7 @@ $(() => {
 
     $(".lg-ut-m").on("click", event => {
         let ans = confirm("You want to logout?\n" +
-            "Please support the app by ratting on play store " + String.fromCodePoint(0x1F642));
+            "Please support the app by rating on play store " + String.fromCodePoint(0x1F642));
         if (ans) {
             setTimeout(() => {
                 location.assign("/logout");
