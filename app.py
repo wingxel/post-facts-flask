@@ -18,7 +18,7 @@ from flask import render_template, Flask, send_file, request, session, redirect
 
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = libs.getRandS(32)
+app.config["SECRET_KEY"] = libs.getRandS(8)
 csrf = CSRFProtect(app)
 csrf.init_app(app)
 
