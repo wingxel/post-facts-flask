@@ -6,6 +6,7 @@ https://wingxel.github.io/website
 Test signup
 """
 
+import os
 import sys
 import requests
 from sys import argv, exit
@@ -17,6 +18,10 @@ if len(argv[1::]) == 0:
 
 absPath = sys.argv[1]
 
+# Check if the provided profile image path is valid
+if not os.path.exists(absPath):
+    exit(f"Invalid profile image: {absPath}")
+
 headers = {
 	"User-Agent": "Mozilla/200",
 }
@@ -24,6 +29,7 @@ headers = {
 sessionv = requests.Session()
 index = sessionv.get("http://localhost:8000/sign-pg")
 
+# Get the csrf_token since the form are protected
 soup = BeautifulSoup(index.text, "html.parser")
 token =  soup.find("input", {"name": "csrf_token"})["value"]
 

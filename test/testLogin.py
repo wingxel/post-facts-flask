@@ -17,6 +17,7 @@ headers = {
 sessionv = requests.Session()
 index = sessionv.get("http://localhost:8000/login-pg")
 
+# Get the csrf_token
 soup = BeautifulSoup(index.text, "html.parser")
 token =  soup.find("input", {"name": "csrf_token"})["value"]
 

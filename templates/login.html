@@ -11,7 +11,7 @@
                 <fieldset>
                     <legend id="Info">Login</legend>
                     <input type="text" oninput="validateName($(this), 'Username')" name="username" id="Username"
-                        placeholder="Enter your username" required><br>
+                        placeholder="Enter your username" required><br>  
                     <input type="password" oninput="validateName($(this), 'Password')" name="password" id="Password"
                         placeholder="Enter your password" required><br>
                     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" id="CSRF">

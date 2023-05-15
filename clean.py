@@ -10,7 +10,10 @@ import os
 from consts import Consts
 
 
-def clean():
+def clean() -> None:
+    """
+    Delete profile images and database file
+    """
     try:
         # remove profile pictures
         for picStr in os.listdir(Consts.SAVE_PROFILE_LOCATION):

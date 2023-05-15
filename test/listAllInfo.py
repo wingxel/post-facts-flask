@@ -12,6 +12,7 @@ import sqlite3
 conn = sqlite3.connect("../wingxel.db")
 cur = conn.cursor()
 
+# List all info
 try:
     cur.execute("SELECT * FROM users")
     users = cur.fetchall()
